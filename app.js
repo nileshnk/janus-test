@@ -1,5 +1,5 @@
-const https = require("https");
-// const http = require("http");
+//const https = require("https");
+ const http = require("http");
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -11,8 +11,8 @@ const options = {
   cert: fs.readFileSync(path.join(__dirname, "./ssl/cert.pem")),
 };
 
-const server = https.createServer(options, app);
-// const server = http.createServer(app);
+//const server = https.createServer(options, app);
+const server = http.createServer(app);
 
 app.use(cors());
 

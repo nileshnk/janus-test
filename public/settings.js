@@ -51,16 +51,9 @@
 //
 var server = null;
 if (window.location.protocol === "http:") {
-  //   server = "ws://nileshk.tech:7088/janus";
-  console.log("server is HTTP!");
-  server = "http://nileshk.tech:8088/janus";
-  // server = "http://10.30.1.85:8088/janus";
+     server = "http://" + window.location.hostname + "/myjanus";
 } else {
-  //   server = "wss://nileshk.tech:7089/janus";
-  //   server = "https://" + window.location.hostname + ":8089/janus";
-  console.log("server is https!!");
-  server = "https://nileshk.tech:8089/janus";
-  server = "http://localhost:8080/myjanus";
+     server = "https://" + window.location.hostname + "/myjanus";
 }
 
 // When creating a Janus object, we can also specify which STUN/TURN
