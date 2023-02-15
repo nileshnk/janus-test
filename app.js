@@ -1,5 +1,5 @@
 //const https = require("https");
- const http = require("http");
+const http = require("http");
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -21,6 +21,10 @@ app.use(express.static(path.join(__dirname, "./public")));
 app.get("/", (req, res) => {
   console.log("someone came here");
   res.send("Welcome");
+});
+
+app.get("/login", (req, res) => {
+  res.send("Login Page!");
 });
 
 server.listen(3003, () => {
