@@ -1,5 +1,5 @@
 const reqBtn = document.getElementById("request");
-
+const sessionForm = document.getElementById("session-form");
 const reqMsg = {
   request: "create",
   room: 23456,
@@ -19,9 +19,29 @@ const reqMsg = {
   mjrs: false,
   allow_rtp_participants: false,
 };
-reqBtn.addEventListener("click", async (e) => {
+reqBtn.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(sessionForm);
+  const sessionid = formData.get("sessionid");
+  const eventid = formData.get("eventid");
+  console.log(sessionid);
   const res = await fetch("https://nileshk.tech/myjanus", {
-    body: reqMsg,
+    method: POST,
+    body: JSON.stringify(reqMsg),
   });
+
   console.log(res);
 });
+
+const myreq = {
+  janus: "event",
+  sender: 1815153248,
+  transaction: "sBJNyUhH6Vc6",
+  plugindata: {
+    plugin: "janus.plugin.echotest",
+    data: {
+      echotest: "event",
+      result: "ok",
+    },
+  },
+};
