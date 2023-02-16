@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
 const app = express();
-
+const { Router } = require("./routes/route");
 // const options = {
 //   key: fs.readFileSync(path.join(__dirname, "./ssl/key.pem")),
 //   cert: fs.readFileSync(path.join(__dirname, "./ssl/cert.pem")),
@@ -26,6 +26,8 @@ app.get("/", (req, res) => {
 app.get("/login", (req, res) => {
   res.send("Login Page!");
 });
+
+app.use("/admin", Router);
 
 server.listen(3003, () => {
   console.log("listening on 3003");
