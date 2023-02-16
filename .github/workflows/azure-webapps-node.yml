@@ -44,3 +44,4 @@ jobs:
       - name: npm install
         run: |
           npm install
+          pm2 restart JanusApp
