@@ -21,16 +21,17 @@ const reqMsg = {
 };
 reqBtn.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const formData = new FormData(sessionForm);
-  const sessionid = formData.get("sessionid");
-  const eventid = formData.get("eventid");
-  console.log(sessionid);
-  const res = await fetch("https://nileshk.tech/myjanus", {
-    method: POST,
-    body: JSON.stringify(reqMsg),
-  });
+  console.log("submit btn pressed!");
+  // const formData = new FormData(sessionForm);
+  // const sessionid = formData.get("sessionid");
+  // const eventid = formData.get("eventid");
+  // console.log(sessionid);
+  // const res = await fetch("https://nileshk.tech/myjanus", {
+  //   method: POST,
+  //   body: JSON.stringify(reqMsg),
+  // });
 
-  console.log(res);
+  // console.log(res);
 });
 
 const myreq = {
